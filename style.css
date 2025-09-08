@@ -1,3 +1,17 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  transition: 0.3s;
+}
+
 /* Navbar */
 nav {
   display: flex;
@@ -10,22 +24,30 @@ nav {
   z-index: 1000;
 }
 
-nav ul {
+.logo {
+  color: white;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.logo span {
+  color: yellow;
+}
+
+.nav-links {
   list-style: none;
   display: flex;
   gap: 1.2rem;
-  margin: 0;
-  padding: 0;
 }
 
-nav a {
-  text-decoration: none;
+.nav-links a {
   color: white;
-  font-weight: bold;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-nav a:hover {
-  text-decoration: underline;
+.nav-links a:hover {
+  color: yellow;
 }
 
 #darkModeBtn {
@@ -36,19 +58,115 @@ nav a:hover {
   cursor: pointer;
 }
 
-/* Scroll reveal effect */
-.hidden {
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #0077b6, #00b4d8);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+}
+
+.hero-text span {
+  color: yellow;
+}
+
+.btn {
+  margin-top: 1rem;
+  background: yellow;
+  color: #333;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: orange;
+  color: white;
+}
+
+/* Sections */
+section {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #0077b6;
+}
+
+/* Cards */
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 1rem 0;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+/* Skills */
+.skill {
+  margin: 1rem 0;
+}
+
+.bar {
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 12px;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  background: #0077b6;
+  border-radius: 20px;
+}
+
+/* Reveal Animation */
+.reveal {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(40px);
   transition: all 0.8s ease-out;
 }
 
-.show {
+.reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Dark mode */
+/* Footer */
+footer {
+  text-align: center;
+  background: #0077b6;
+  color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Dark Mode */
 .dark-mode {
   background: #121212;
   color: #f5f5f5;
@@ -58,7 +176,7 @@ nav a:hover {
   background: #222;
 }
 
-.dark-mode section {
+.dark-mode section, .dark-mode .card {
   background: #1e1e1e;
   color: #f5f5f5;
 }
