@@ -1,39 +1,30 @@
-// Smooth scrolling for navbar links
-document.querySelectorAll("nav a").forEach(anchor => {
-  anchor.addEventListener("click", function(e) {
+// Smooth Scroll
+document.querySelectorAll("nav a").forEach(link => {
+  link.addEventListener("click", e => {
     e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
+    document.querySelector(link.getAttribute("href")).scrollIntoView({
       behavior: "smooth"
     });
   });
 });
 
-// Scroll reveal animation
-const sections = document.querySelectorAll(".hidden");
-
-const revealOnScroll = () => {
-  const triggerBottom = window.innerHeight * 0.85;
-
-  sections.forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
-
-    if (sectionTop < triggerBottom) {
-      section.classList.add("show");
+// Reveal on scroll
+function reveal() {
+  const reveals = document.querySelectorAll(".reveal");
+  for (let r of reveals) {
+    let windowHeight = window.innerHeight;
+    let elementTop = r.getBoundingClientRect().top;
+    if (elementTop < windowHeight - 100) {
+      r.classList.add("active");
     }
-  });
-};
+  }
+}
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal);
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
-
-// Dark mode toggle
+// Dark Mode
 const darkBtn = document.getElementById("darkModeBtn");
-
 darkBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
-  if (document.body.classList.contains("dark-mode")) {
-    darkBtn.textContent = "☀️";
-  } else {
-    darkBtn.textContent = "🌙";
-  }
+  darkBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
 });
