@@ -5,31 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dhanush K P - Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <!-- Navbar -->
   <nav>
-    <ul>
+    <h2 class="logo">Dhanush<span>.</span></h2>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#interests">Interests</a></li>
-      <li><a href="#hobbies">Hobbies</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button id="darkModeBtn">🌙</button>
   </nav>
 
-  <!-- Header -->
-  <header>
-    <h1>DHANUSH K P</h1>
-    <p>Computer Science Engineering Student</p>
-  </header>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Hello, I'm <span>Dhanush K P</span></h1>
+      <p>Computer Science Engineering Student | Full Stack Developer | AI Enthusiast</p>
+      <a href="resume.pdf" target="_blank" class="btn">📄 Download Resume</a>
+    </div>
+  </section>
 
-  <!-- About Me -->
-  <section id="about" class="hidden">
+  <!-- About -->
+  <section id="about" class="reveal">
     <h2>About Me</h2>
     <p>
       Computer Science Engineering student with strong skills in Data Structures & Algorithms,
@@ -39,55 +44,66 @@
   </section>
 
   <!-- Education -->
-  <section id="education" class="hidden">
+  <section id="education" class="reveal">
     <h2>Education</h2>
-    <ul>
-      <li>ST Philomena PU College – PUC (90%) (2022-2023)</li>
-      <li>VTU University – Bachelor of Engineering (CGPA: 8.6) (2023-2027)</li>
-    </ul>
+    <div class="card">
+      <h3>ST Philomena PU College</h3>
+      <p>PUC (90%) | 2022 - 2023</p>
+    </div>
+    <div class="card">
+      <h3>VTU University</h3>
+      <p>Bachelor of Engineering in CSE | CGPA: 8.6 | 2023 - 2027</p>
+    </div>
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="hidden">
+  <section id="projects" class="reveal">
     <h2>Projects</h2>
-    <ul>
-      <li><b>Employee Details Management</b> – MySQL, Python, React, Django</li>
-      <li><b>Contact Book Web Application</b> – Flask, Python, HTML, Bootstrap, MySQL</li>
-    </ul>
+    <div class="projects-grid">
+      <div class="card">
+        <h3>Employee Details Management</h3>
+        <p>Built using MySQL, Python, React, and Django.</p>
+      </div>
+      <div class="card">
+        <h3>Contact Book Web App</h3>
+        <p>Developed with Flask, Python, HTML, Bootstrap, and MySQL.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="hidden">
+  <section id="skills" class="reveal">
     <h2>Skills</h2>
-    <p>Python, C, C++, SQL, DSA, Effective Communication</p>
-  </section>
-
-  <!-- Interests -->
-  <section id="interests" class="hidden">
-    <h2>Interests</h2>
-    <p>Cybersecurity, Cryptography, Full Stack Web Development, AI & ML, Cloud Computing</p>
-  </section>
-
-  <!-- Hobbies -->
-  <section id="hobbies" class="hidden">
-    <h2>Hobbies</h2>
-    <p>Listening to Music, Playing Cricket, Drawing, Cooking</p>
+    <div class="skill">
+      <p>Python</p>
+      <div class="bar"><span style="width: 90%"></span></div>
+    </div>
+    <div class="skill">
+      <p>C / C++</p>
+      <div class="bar"><span style="width: 80%"></span></div>
+    </div>
+    <div class="skill">
+      <p>SQL</p>
+      <div class="bar"><span style="width: 75%"></span></div>
+    </div>
+    <div class="skill">
+      <p>DSA</p>
+      <div class="bar"><span style="width: 85%"></span></div>
+    </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="hidden">
+  <section id="contact" class="reveal">
     <h2>Contact</h2>
     <p>📞 8310837482</p>
     <p>📧 <a href="mailto:dhanushkp72@gmail.com">dhanushkp72@gmail.com</a></p>
     <p>📍 Puttur, Dakshina Kannada - 574223</p>
-    <p><a href="resume.pdf" target="_blank">📄 View Resume</a></p>
   </section>
 
   <footer>
     <p>© 2025 Dhanush K P | Portfolio</p>
   </footer>
 
-  <!-- JS file -->
   <script src="script.js"></script>
 </body>
 </html>
