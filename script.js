@@ -5,7 +5,6 @@ $(window).on('scroll', function() {
       $(this).addClass('show');
     }
   });
-
   // Animate skill bars if Skills section exists
   $("#skills .skill-bar").each(function() {
     let barPos = $(this).offset().top;
@@ -15,3 +14,4 @@ $(window).on('scroll', function() {
     }
   });
 });
+
