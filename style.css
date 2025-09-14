@@ -1,99 +1,163 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #1e3c72, #2a5298);
   color: white;
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
+/* Navbar */
 nav {
-  background: rgba(0, 0, 50, 0.8);
-  padding: 15px;
+  background: rgba(0, 0, 50, 0.85);
+  padding: 15px 0;
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
+  top: 0;
   z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 nav ul {
-  list-style: none;
   display: flex;
   justify-content: center;
+  list-style: none;
 }
 
 nav ul li {
-  margin: 0 20px;
+  margin: 0 25px;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
-nav ul li a:hover, nav ul li a.active {
+nav ul li a:hover,
+nav ul li a.active {
   color: #00c6ff;
+  transform: scale(1.1);
 }
 
+/* Section Styling */
 section {
-  padding: 100px 20px;
+  padding: 120px 20px;
   min-height: 100vh;
   text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-in-out;
 }
 
-h1 {
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h1, h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  animation: fadeInDown 1s ease-in-out;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
+/* Paragraphs */
 p {
   font-size: 1.2rem;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 /* Resume Button */
 .resume-btn {
-  background: #00c6ff;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: white;
-  padding: 12px 25px;
-  border-radius: 25px;
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
 .resume-btn:hover {
-  background: #0072ff;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
 }
 
-/* Skills Bar */
+/* Skills Bars */
 .bar-bg {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  margin: 10px auto;
-  width: 60%;
-  height: 20px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 25px;
+  margin: 15px auto;
+  width: 70%;
+  height: 22px;
+  overflow: hidden;
 }
 
 .skill-bar {
-  background: #00c6ff;
   height: 100%;
   width: 0;
-  border-radius: 20px;
-  transition: width 2s ease;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  transition: width 2s ease-in-out;
 }
 
+/* Project Cards */
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: left;
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  color: #00c6ff;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+/* Footer */
 footer {
-  background: rgba(0, 0, 50, 0.8);
+  background: rgba(0, 0, 50, 0.85);
   text-align: center;
   padding: 15px;
   font-size: 0.9rem;
+  color: #fff;
 }
 
+/* Animations */
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-30px); }
   to { opacity: 1; transform: translateY(0); }
