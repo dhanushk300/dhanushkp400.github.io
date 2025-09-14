@@ -10,23 +10,21 @@ $(document).ready(function() {
     }
   });
 
-  // Highlight active link on scroll
+  // Reveal sections on scroll
   $(window).on("scroll", function() {
-    var scrollPos = $(document).scrollTop();
-    $("nav a").each(function() {
-      var section = $(this).attr("href");
-      if ($(section).position() && $(section).position().top <= scrollPos + 80) {
-        $("nav a").removeClass("active");
-        $(this).addClass("active");
+    $("section").each(function() {
+      var top = $(this).offset().top - window.innerHeight + 100;
+      if ($(window).scrollTop() > top) {
+        $(this).addClass("show");
       }
     });
   });
 
-  // Animate skill bars
-  $(".skill-bar").each(function() {
-    var width = $(this).data("skill");
-    $(this).animate({
-      width: width
-    }, 1500);
-  });
+  // Animate skill bars when skills page loads
+  if ($("#skills").length) {
+    $(".skill-bar").each(function() {
+      var width = $(this).data("skill");
+      $(this).animate({ width: width }, 2000);
+    });
+  }
 });
